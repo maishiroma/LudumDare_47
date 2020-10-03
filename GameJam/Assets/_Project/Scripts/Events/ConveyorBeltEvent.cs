@@ -1,9 +1,10 @@
-﻿namespace Environment
+﻿namespace Events
 {
     using System.Collections;
     using UnityEngine;
     using UnityEngine.SceneManagement;
     using GameBase;
+    using Terrain;
 
     public class ConveyorBeltEvent : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-﻿namespace Environment
+﻿namespace Terrain
 {
     using System.Collections;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
     using UnityEngine.SceneManagement;
     using GameBase;
 
-    public class EventEnd : MonoBehaviour
+    public class KillZone : MonoBehaviour
     {
         public int eventIndex;
 
@@ -22,13 +22,11 @@
         private IEnumerator StartEvent(Vector2 playerPos)
         {
             yield return new WaitForSeconds(3f);
-            GameManager.Instance.playerClearedEvent = true;
 
             // WIP
+            GameManager.Instance.ResetSavedData();
             SceneManager.LoadScene(eventIndex);
         }
-
-
     }
 
 }

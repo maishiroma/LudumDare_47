@@ -1,4 +1,4 @@
-﻿namespace Environment
+﻿namespace Terrain
 {
     using UnityEngine;
     using UnityEngine.SceneManagement;

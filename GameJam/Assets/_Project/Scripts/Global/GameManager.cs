@@ -25,6 +25,12 @@
             }
         }
 
+        public void ResetSavedData()
+        {
+            playerClearedEvent = false;
+            savedWayPointIndex = 0;
+        }
+
     }
 
 }

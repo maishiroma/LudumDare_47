@@ -17,7 +17,6 @@ namespace Player
         // Private Vars
         private Rigidbody2D playerRB;
         private Vector2 movementInput;
-        private bool didMouseClick;
 
         private InputActions controls;      // Ref to the controls input that we are using for the project
 
@@ -30,10 +29,6 @@ namespace Player
             // Then we can set up calllbacks to specific methods that we want the controls to listen to
             controls.Player.Movement.performed += ctx => GrabMovement(ctx);
             controls.Player.Movement.canceled += ctx => GrabMovement(ctx);
-            
-            controls.Player.MouseSelection.performed += ctx => GrabMouseSelect(ctx);
-            controls.Player.MouseSelection.canceled += ctx => GrabMouseSelect(ctx);
-
         }
 
         // Enables the controls when the player is active
@@ -73,12 +68,6 @@ namespace Player
             movementInput.x = ctx.ReadValue<Vector2>().x;
             movementInput.y = ctx.ReadValue<Vector2>().y;
         }
-
-        private void GrabMouseSelect(InputAction.CallbackContext ctx)
-        {
-            didMouseClick = ctx.ReadValueAsButton();
-        }
-
     }
 
 }
