@@ -117,6 +117,22 @@
             SceneManager.LoadScene(gameOverIndex);
         }
     
+        public void ModifiyDifficulty(int currentRound)
+        {
+            if(currentRound > 2)
+            {
+                // Until round 2, after each round that passes, we will amp up the speed of the
+                // traps until it is at a specific threshold
+
+                float moddedSpeed = moveSpeed + (currentRound);
+                float moddedStrike = timeToStrike - (currentRound / (0.01f * currentRound));
+                float moddedDeploy = timeToDeploy - (currentRound / (0.01f * currentRound));
+
+                moveSpeed = Mathf.Clamp(moddedSpeed, moveSpeed, 30f);
+                timeToStrike = Mathf.Clamp(moddedStrike, 0.1f, timeToStrike);
+                timeToDeploy = Mathf.Clamp(moddedDeploy, 0.1f, timeToDeploy);
+            }
+        }
     }
 
 }

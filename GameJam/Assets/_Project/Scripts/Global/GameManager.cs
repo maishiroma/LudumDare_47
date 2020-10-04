@@ -35,6 +35,7 @@
         {
             playerClearedEvent = false;
             savedWayPointIndex = 0;
+            roundsSurvived = 0;
         }
 
     }
