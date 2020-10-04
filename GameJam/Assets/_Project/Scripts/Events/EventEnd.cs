@@ -14,6 +14,7 @@
         {
             if (collision.CompareTag("Player"))
             {
+                collision.GetComponentInChildren<Animator>().SetBool("hasWon", true); 
                 StartCoroutine(StartEvent(collision.transform.position));
             }
 
@@ -23,6 +24,7 @@
         {
             yield return new WaitForSeconds(3f);
             GameManager.Instance.playerClearedEvent = true;
+            GameManager.Instance.roundsSurvived++;
 
             // WIP
             SceneManager.LoadScene(eventIndex);

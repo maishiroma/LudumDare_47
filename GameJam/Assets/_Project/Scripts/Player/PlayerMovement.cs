@@ -14,11 +14,23 @@ namespace Player
         public float stopSpeed;
         public float maxMoveSpeed;
 
+        public Animator playerAnimations;
+
         // Private Vars
         private Rigidbody2D playerRB;
         private Vector2 movementInput;
 
         private InputActions controls;      // Ref to the controls input that we are using for the project
+
+        public bool IsPlayerDead
+        {
+            get { return playerAnimations.GetBool("hasLost");  }
+        }
+
+        public bool IsPlayerWin
+        {
+            get { return playerAnimations.GetBool("hasWon");  }
+        }
 
         // Activates all of the controls for the player
         private void Awake()
@@ -52,10 +64,19 @@ namespace Player
 
         private void FixedUpdate()
         {
-            if(movementInput != Vector2.zero)
+            if (IsPlayerDead == false & IsPlayerWin == false)
             {
-                Vector2 newVelocity = Vector2.ClampMagnitude(playerRB.velocity + movementInput, maxMoveSpeed);
-                playerRB.velocity = Vector2.Lerp(playerRB.velocity, newVelocity, moveSpeed * Time.deltaTime);
+                if (movementInput != Vector2.zero)
+                {
+                    Vector2 newVelocity = Vector2.ClampMagnitude(playerRB.velocity + movementInput, maxMoveSpeed);
+                    playerRB.velocity = Vector2.Lerp(playerRB.velocity, newVelocity, moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    playerRB.velocity = Vector2.Lerp(playerRB.velocity, Vector2.zero, stopSpeed * Time.deltaTime);
+                }
+
+                AnimatePlayerMovement();
             }
             else
             {
@@ -67,6 +88,38 @@ namespace Player
         {
             movementInput.x = ctx.ReadValue<Vector2>().x;
             movementInput.y = ctx.ReadValue<Vector2>().y;
+        }
+
+        private void AnimatePlayerMovement()
+        {
+            if(movementInput == Vector2.zero)
+            {
+                playerAnimations.SetFloat("Blend", 0f);
+            }
+            else if(movementInput.y != 0)
+            {
+                switch (Mathf.Sign(movementInput.y))
+                {
+                    case -1:
+                        playerAnimations.SetFloat("Blend", 0.5f);
+                        break;
+                    case 1:
+                        playerAnimations.SetFloat("Blend", 0.25f);
+                        break;
+                }
+            }
+            else
+            {
+                switch(Mathf.Sign(movementInput.x))
+                {
+                    case -1:
+                        playerAnimations.SetFloat("Blend", 0.75f);
+                        break;
+                    case 1:
+                        playerAnimations.SetFloat("Blend", 1f);
+                        break;
+                }
+            }
         }
     }
 

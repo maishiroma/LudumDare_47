@@ -12,12 +12,18 @@
         public bool playerClearedEvent;
         public int savedWayPointIndex;
 
+        public int roundsSurvived;
+
         private void Awake()
         {
             if(Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(Instance);
+
+                playerClearedEvent = false;
+                savedWayPointIndex = 0;
+                roundsSurvived = 0;
             }
             else
             {

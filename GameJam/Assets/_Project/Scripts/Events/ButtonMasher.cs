@@ -1,15 +1,20 @@
-﻿namespace Events
+﻿using Player;
+
+namespace Events
 {
     using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
     using GameBase;
     using UnityEngine.InputSystem;
     using TMPro;
     using UnityEngine.SceneManagement;
+    using Player;
 
     public class ButtonMasher : MonoBehaviour
     {
+        public Animator eventAnimations;
+        public Rigidbody2D player;
+
         public int mainLevel;
         public int gameOver;
 
@@ -27,6 +32,7 @@
         public TextMeshProUGUI currentHealth_text;
 
         // Private Variables
+
         private bool eventDone = false;
 
         private InputActions controls;      // Ref to the controls input that we are using for the project
@@ -67,30 +73,48 @@
             opponentAttackRate = Random.Range(minOpponentAttackRate, maxOpponentAttackRate);
 
             currHealth = 100;
-
-            mainMessage.text = "Resist getting taken!!!!";
-
-            InvokeRepeating("LoseHealth", 0f, opponentAttackRate);
+            
+            mainMessage.text = "Something's amist...";
         }
 
         private void Update()
         {
            if(eventDone == false)
            {
-                currentHealth_text.text = "Strength: " + currHealth.ToString();
-                timeRemaining_text.text = "Time: " + ((int)timePassed).ToString() + "/" + ((int)timeRequirement).ToString();
-
-                if (timePassed < timeRequirement)
+                if(eventAnimations.GetCurrentAnimatorStateInfo(0).IsName("DONE") == false)
                 {
-                    timePassed += Time.deltaTime;
+                    //if (Mathf.Abs(Vector2.Distance(player.position, trapRB.position)) > 0.1f)
+                    //{
+                    //    Vector2 newVelocity = (destination - trapRB.position) * Time.deltaTime;
+                    //    trapRB.velocity = newVelocity.normalized * moveSpeed;
+                    //}
                 }
                 else
                 {
-                    StartCoroutine(ClearEvent());
-                    eventDone = true;
-                    return;
+                    currentHealth_text.text = "Strength: " + currHealth.ToString();
+                    timeRemaining_text.text = "Time: " + ((int)timePassed).ToString() + "/" + ((int)timeRequirement).ToString();
+
+                    if (timePassed < timeRequirement)
+                    {
+                        timePassed += Time.deltaTime;
+                    }
+                    else
+                    {
+                        StartCoroutine(ClearEvent());
+                        eventDone = true;
+                        return;
+                    }
                 }
            }
+        }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if(eventAnimations.GetCurrentAnimatorStateInfo(0).IsName("DONE") & collision.CompareTag("Player"))
+            {
+                mainMessage.text = "Repeatidly left click to resist getting taken!";
+                InvokeRepeating("LoseHealth", 0f, opponentAttackRate);
+            }
         }
 
         private void LoseHealth()

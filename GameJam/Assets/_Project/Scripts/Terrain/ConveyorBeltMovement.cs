@@ -9,7 +9,8 @@
         public Rigidbody2D objRB;
         public Transform[] wayPoints;
         public float moveSpeed;
-        public bool canMove;
+        public float stopSpeed;
+        public bool canMove = true;
 
         // private variables
         private int currPointIndex = 0;
@@ -50,6 +51,10 @@
                         currPointIndex = 0;
                     }
                 }
+            }
+            else
+            {
+                objRB.velocity = Vector2.Lerp(objRB.velocity, Vector2.zero, stopSpeed * Time.deltaTime);
             }
         }
 
