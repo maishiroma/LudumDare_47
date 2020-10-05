@@ -9,6 +9,7 @@
     {
         public int gameOverIndex;
         public float moveSpeed;
+        public float captureSpeed;
         public float timeToStrike;
         public float timeToDeploy;
 
@@ -17,6 +18,8 @@
         public BoxCollider2D attackBox;
         public Rigidbody2D trapRB;
         public Animator trapAnimation;
+        public AudioSource audioPlayer;
+        public AudioClip loseSound;
 
         private bool hasBeenSetOff = false;
         private float currTime;
@@ -75,10 +78,18 @@
 
         private void MoveToPosition(Vector2 destination, TrapStates stateToEndIn)
         {
-            if (Mathf.Abs(Vector2.Distance(destination, trapRB.position)) > 0.1f)
+            if (Mathf.Abs(Vector2.Distance(destination, trapRB.position)) >= 0.1f)
             {
-                Vector2 newVelocity = (destination- trapRB.position) * Time.deltaTime;
-                trapRB.velocity = newVelocity.normalized * moveSpeed;
+                Vector2 newVelocity = (destination - trapRB.position) * Time.deltaTime;
+                
+                if(hasBeenSetOff == true)
+                {
+                    trapRB.velocity = newVelocity.normalized * captureSpeed;
+                }
+                else
+                {
+                    trapRB.velocity = newVelocity.normalized * moveSpeed;
+                }
             }
             else
             {
@@ -100,6 +111,9 @@
 
         private IEnumerator StartEvent(Rigidbody2D player, BoxCollider2D playerHitbox)
         {
+            audioPlayer.Stop();
+            audioPlayer.PlayOneShot(loseSound, 0.5f);
+
             yield return new WaitForFixedUpdate();
 
             playerHitbox.enabled = false;
@@ -113,7 +127,6 @@
             }
 
             // WIP
-            GameManager.Instance.ResetSavedData();
             SceneManager.LoadScene(gameOverIndex);
         }
     
@@ -124,11 +137,13 @@
                 // Until round 2, after each round that passes, we will amp up the speed of the
                 // traps until it is at a specific threshold
 
-                float moddedSpeed = moveSpeed + (currentRound);
-                float moddedStrike = timeToStrike - (currentRound / (0.01f * currentRound));
-                float moddedDeploy = timeToDeploy - (currentRound / (0.01f * currentRound));
+                float randModifier = Random.Range(0.05f, 0.09f) * currentRound;
 
-                moveSpeed = Mathf.Clamp(moddedSpeed, moveSpeed, 30f);
+                float moddedSpeed = moveSpeed + randModifier;
+                float moddedStrike = timeToStrike - randModifier;
+                float moddedDeploy = timeToDeploy - randModifier;
+
+                moveSpeed = Mathf.Clamp(moddedSpeed, moveSpeed, 14.9f);
                 timeToStrike = Mathf.Clamp(moddedStrike, 0.1f, timeToStrike);
                 timeToDeploy = Mathf.Clamp(moddedDeploy, 0.1f, timeToDeploy);
             }

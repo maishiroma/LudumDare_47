@@ -14,7 +14,7 @@
 
         private void Update()
         {
-            scoreText.text = "Round " + GameManager.Instance.roundsSurvived.ToString();
+            scoreText.text = GameManager.Instance.roundsSurvived.ToString();
             mainBodyText.text = customTextToDisplay;
         }
     }

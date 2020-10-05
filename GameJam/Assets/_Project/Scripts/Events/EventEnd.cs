@@ -9,6 +9,8 @@
     public class EventEnd : MonoBehaviour
     {
         public int eventIndex;
+        public AudioSource audioPlayer;
+        public AudioClip winSound;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -22,10 +24,14 @@
 
         private IEnumerator StartEvent(Vector2 playerPos)
         {
-            yield return new WaitForSeconds(3f);
+            audioPlayer.Stop();
+            audioPlayer.PlayOneShot(winSound, 0.5f);
+            yield return new WaitForFixedUpdate();
+
             GameManager.Instance.playerClearedEvent = true;
             GameManager.Instance.roundsSurvived++;
 
+            yield return new WaitForSeconds(1f);
             // WIP
             SceneManager.LoadScene(eventIndex);
         }
