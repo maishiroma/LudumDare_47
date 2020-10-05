@@ -1228,6 +1228,42 @@ PrefabInstance:
       propertyPath: eventIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 348230763}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eventActivate
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb8f3c7eaaf9cb429a5f0a8e1074de4, type: 3}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: alphaOfOverlay
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenEffectParent
+      value: 
+      objectReference: {fileID: 1419093392}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eyeEffect
+      value: 
+      objectReference: {fileID: 1458811489}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: overlayEffect
+      value: 
+      objectReference: {fileID: 2089318453}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenTransitionTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainMessage
+      value: 
+      objectReference: {fileID: 1152836300}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainUI
+      value: 
+      objectReference: {fileID: 1451740778}
     - target: {fileID: 392754070785112571, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.58
@@ -4929,6 +4965,42 @@ PrefabInstance:
       propertyPath: eventIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 348230763}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eventActivate
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb8f3c7eaaf9cb429a5f0a8e1074de4, type: 3}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: alphaOfOverlay
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenEffectParent
+      value: 
+      objectReference: {fileID: 1419093392}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eyeEffect
+      value: 
+      objectReference: {fileID: 1458811489}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: overlayEffect
+      value: 
+      objectReference: {fileID: 2089318453}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenTransitionTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainMessage
+      value: 
+      objectReference: {fileID: 1152836300}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainUI
+      value: 
+      objectReference: {fileID: 1451740778}
     - target: {fileID: 392754070785112571, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.026
@@ -5666,7 +5738,7 @@ RectTransform:
   m_Children:
   - {fileID: 1400632805}
   m_Father: {fileID: 552076107}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5912,6 +5984,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 550516489}
+  - {fileID: 1419093393}
   - {fileID: 535824772}
   - {fileID: 1977662692}
   m_Father: {fileID: 0}
@@ -14816,6 +14889,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1419093392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419093393}
+  m_Layer: 5
+  m_Name: EventStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1419093393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419093392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1458811488}
+  - {fileID: 2089318452}
+  m_Father: {fileID: 552076107}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1425933715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15100,6 +15210,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1458811487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458811488}
+  - component: {fileID: 1458811490}
+  - component: {fileID: 1458811489}
+  m_Layer: 5
+  m_Name: EyeMask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1458811488
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458811487}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1419093393}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1458811489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458811487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7bc8ee401fc73e64c87d71efa1119802, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1458811490
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458811487}
+  m_CullTransparentMesh: 0
 --- !u!1 &1460043494
 GameObject:
   m_ObjectHideFlags: 0
@@ -17493,6 +17678,42 @@ PrefabInstance:
       propertyPath: eventIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 348230763}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eventActivate
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb8f3c7eaaf9cb429a5f0a8e1074de4, type: 3}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: alphaOfOverlay
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenEffectParent
+      value: 
+      objectReference: {fileID: 1419093392}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eyeEffect
+      value: 
+      objectReference: {fileID: 1458811489}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: overlayEffect
+      value: 
+      objectReference: {fileID: 2089318453}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenTransitionTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainMessage
+      value: 
+      objectReference: {fileID: 1152836300}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainUI
+      value: 
+      objectReference: {fileID: 1451740778}
     - target: {fileID: 392754070785112571, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.95
@@ -17807,6 +18028,42 @@ PrefabInstance:
       propertyPath: eventIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 348230763}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eventActivate
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb8f3c7eaaf9cb429a5f0a8e1074de4, type: 3}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: alphaOfOverlay
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenEffectParent
+      value: 
+      objectReference: {fileID: 1419093392}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: eyeEffect
+      value: 
+      objectReference: {fileID: 1458811489}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: overlayEffect
+      value: 
+      objectReference: {fileID: 2089318453}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: screenTransitionTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainMessage
+      value: 
+      objectReference: {fileID: 1152836300}
+    - target: {fileID: 392754070785112569, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
+      propertyPath: mainUI
+      value: 
+      objectReference: {fileID: 1451740778}
     - target: {fileID: 392754070785112571, guid: ce9506de4642ecb4eae6023a4141bed9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.585
@@ -21758,7 +22015,7 @@ RectTransform:
   - {fileID: 1911090571}
   - {fileID: 1671192393}
   m_Father: {fileID: 552076107}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -23350,6 +23607,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2089318451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089318452}
+  - component: {fileID: 2089318454}
+  - component: {fileID: 2089318453}
+  m_Layer: 5
+  m_Name: DarkOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2089318452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089318451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1419093393}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2089318453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089318451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2089318454
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089318451}
+  m_CullTransparentMesh: 0
 --- !u!1 &2100048121
 GameObject:
   m_ObjectHideFlags: 0

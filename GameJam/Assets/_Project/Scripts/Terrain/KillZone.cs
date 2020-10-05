@@ -51,6 +51,7 @@
                     break;
                 case TrapStates.DEPLOYING:
                     // Moving into pos
+                    currTime += Time.deltaTime;
                     MoveToPosition(setTrapPos.position, TrapStates.WAITING);
                     break;
                 case TrapStates.WAITING:
@@ -78,7 +79,7 @@
 
         private void MoveToPosition(Vector2 destination, TrapStates stateToEndIn)
         {
-            if (Mathf.Abs(Vector2.Distance(destination, trapRB.position)) >= 0.1f)
+            if (Mathf.Abs(Vector2.Distance(destination, trapRB.position)) >= 0.1f && currTime < 1.5f)
             {
                 Vector2 newVelocity = (destination - trapRB.position) * Time.deltaTime;
                 
@@ -93,6 +94,7 @@
             }
             else
             {
+                currTime = 0f;
                 trapRB.velocity = Vector2.zero;
                 trapRB.angularVelocity = 0f;
                 currState = stateToEndIn;
@@ -132,9 +134,9 @@
     
         public void ModifiyDifficulty(int currentRound)
         {
-            if(currentRound > 2)
+            if(currentRound > 1)
             {
-                // Until round 2, after each round that passes, we will amp up the speed of the
+                // Until past round 1, we will amp up the speed of the
                 // traps until it is at a specific threshold
 
                 float randModifier = Random.Range(0.05f, 0.09f) * currentRound;

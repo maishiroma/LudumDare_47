@@ -5,12 +5,14 @@
     using UnityEngine;
     using UnityEngine.SceneManagement;
     using GameBase;
+    using UI;
 
     public class EventEnd : MonoBehaviour
     {
         public int eventIndex;
         public AudioSource audioPlayer;
         public AudioClip winSound;
+        public ContextualVisuals mainUI;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -19,11 +21,12 @@
                 collision.GetComponentInChildren<Animator>().SetBool("hasWon", true); 
                 StartCoroutine(StartEvent(collision.transform.position));
             }
-
         }
 
         private IEnumerator StartEvent(Vector2 playerPos)
         {
+            mainUI.customTextToDisplay = "Successful escape!";
+
             audioPlayer.Stop();
             audioPlayer.PlayOneShot(winSound, 0.5f);
             yield return new WaitForFixedUpdate();

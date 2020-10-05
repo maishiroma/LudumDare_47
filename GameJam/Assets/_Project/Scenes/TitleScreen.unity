@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Revolving Dodger
+  m_text: Hunger Pains
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 50b171ff51f866d4482578b6ea99b4b6, type: 2}
   m_sharedMaterial: {fileID: 985967243224615342, guid: 50b171ff51f866d4482578b6ea99b4b6, type: 2}
@@ -623,6 +623,7 @@ MonoBehaviour:
   currentActive: {fileID: 1901816607}
   buttonClick: {fileID: 8300000, guid: 926d06183839bed46971f90d29f14c9b, type: 3}
   audioPlayer: {fileID: 257312273}
+  scoreText: {fileID: 0}
 --- !u!4 &257312272
 Transform:
   m_ObjectHideFlags: 0
@@ -1795,7 +1796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Ludum Dare 47 Game By Kaabiikaze - Oct 2020
+  m_text: "Made By Kaabiikaze \n\nCreated for Ludme Dare 47 (Oct 2-5 2020)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 50b171ff51f866d4482578b6ea99b4b6, type: 2}
   m_sharedMaterial: {fileID: 985967243224615342, guid: 50b171ff51f866d4482578b6ea99b4b6, type: 2}
