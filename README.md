@@ -16,6 +16,11 @@ Regardless, I got something working and in a pretty fun state. So without furthe
 
 __Hunger Pains__ is a simple action game where the player is tasked to survive as long as possible on the sushi conveyor belt from hungry customers. Go for the high score, while overcoming the steadily increasing challenges of the customers! You know what they say, the longer people don't eat, the more desperate they will get...
 
+## How to Play
+This game can be played for FREE using the following:
+- Download the Windows release [here](https://github.com/maishiroma/LudumDare_47/releases/tag/1.0.1) (RECCOMENDED)
+- Play it on your browser [here](https://kaabiikaze.itch.io/hunger-pains)
+
 ## Win Conditions
 Survice from the onslaught of chopsticks that are trying to pick you up!
 
